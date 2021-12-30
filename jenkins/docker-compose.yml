@@ -15,8 +15,21 @@ services:
         image: remote-host
         build:
             context: centos
+        volumes:
+            - "./scripts/backup-sql.sh:/tmp/script.sh"
         networks:
             - net
-
+    db_host:
+        container_name: db
+        image: mysql:8.0
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            - "MYSQL_ROOT_PASSWORD=example"
+        volumes:
+            - "$PWD/db_data:/var/lib/mysql"
+        cap_add:
+            - SYS_NICE # CAP_SYS_NICE
+        networks:
+            - net
 networks:
     net:
