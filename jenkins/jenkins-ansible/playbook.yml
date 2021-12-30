@@ -1,0 +1,4 @@
+- hosts: centos
+  tasks:
+    - debug:
+        msg: "{{ MSG }}"
