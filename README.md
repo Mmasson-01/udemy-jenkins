@@ -44,3 +44,28 @@ Resources: https://github.com/ricardoandre97/jenkins-resources
     -   call job with crum: `curl -u "user:password" -H "$crumb" -X POST http://localhost:8081/job/demo-ENV/build?delay=0sec`
 
 -   Trigger a job from bash script with parameter
+
+# Section 9 : Jenkins & Email
+
+-   Install Mail plugin (Mailer Plugin)
+-   AWS SES
+
+    -   Email Addresses -> Create new email addresses
+    -   SMTP Settings -> Create new SMTP credentials
+    -   Use one of the SMTP Port
+
+-   Jenkins -> Configure Global
+
+    -   Email Notification -> Use SMTP Authentication.
+    -   Jenkins Location -> System Admin email-address
+    -   Test configuration
+
+## Jenkins and GMAIL
+
+-   Use SMPT Gmail server
+-   Activate less secure app
+
+# Section 10 : Jenkins & Maven
+
+-   Install Maven Plugin (may be built-in)
+-   Install GIT Plugin (may be built-in)
