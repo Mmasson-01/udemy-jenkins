@@ -43,5 +43,25 @@ services:
             - "8082:80"
         networks:
             - net
+    # gitlab:
+    #     image: "gitlab/gitlab-ee:latest"
+    #     restart: always
+    #     hostname: "gitlab.example.com"
+    #     container_name: git-server
+    #     environment:
+    #         GITLAB_OMNIBUS_CONFIG: |
+    #             external_url 'https://gitlab.example.com'
+    #             # Add any other gitlab.rb configuration here, each on its own line
+    #     ports:
+    #         - "8083:80"
+    #         - "8084:443"
+    #         - "8085:22"
+    #     volumes:
+    #         - "./gitlab/config:/etc/gitlab"
+    #         - "./gitlab/logs:/var/log/gitlab"
+    #         - "./gitlab/data:/var/opt/gitlab"
+    #     shm_size: "256m"
+    #     networks:
+    #         - net
 networks:
     net:

@@ -1,0 +1,9 @@
+job('demo-dsl-children') {
+    description('This is my description')
+
+    parameters {
+        stringParam('Planet', defaultValue = 'world', description = 'This is the world')
+        booleanParam('FLAG', true)
+        choiceParam('OPTION', ['option 1 (default)', 'option 2', 'option 3'])
+    }
+}
