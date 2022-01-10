@@ -3,14 +3,15 @@ version: "3.9"
 services:
     jenkins:
         container_name: jenkins
-        image: jenkins-ansible
+        image: jenkins/docker-ansible
         build:
-            context: jenkins-ansible
+            context: pipeline
         ports:
             - "8081:8080"
         volumes:
             - "./jenkins_home:/var/jenkins_home"
             - "./jenkins-ansible:/var/jenkins_home/ansible"
+            - "/var/run/docker.sock:/var/run/docker.sock"
         networks:
             - net
     remote_host:
